@@ -1,17 +1,15 @@
 [tool.poetry]
-name = "py-suite"
+name = "pysuit"
 version = "0.1.0"
 description = "This package will resolve all small intigrities of python data structures(List,Tuple,Dictionary,Set) which are not provided by-default."
-authors = ["Deepak Patidar <info.deepakpatidar@gmail.com>"]
+authors = ["Deepak Patidar <deepakp@thoughtwin.com>"]
 keywords = ['py-suite','suite','python bugs', 'features','py-features']
 readme = 'README.md'
 license = "MIT"
-[tool.poetry.dependencies]
-python =  ">= 3.6.0"
 
-[tool.poetry.dev-dependencies]
-pytest = "^5.2"
+[tool.poetry.dependencies]
+python = ">= 3.6.0"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
