@@ -1,8 +1,13 @@
 """
 main file containes the module
 """
-def dictsort(key:str):
-    print("I am sorting")
+
+class PySuit:
+    def __init__(self):
+        pass
+
+    def dictsort(self):
+        print("I am sorting")
 
 if __name__ == '__main__':
-    dictsort()
+    pysuit = PySuit()
