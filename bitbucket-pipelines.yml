@@ -8,7 +8,7 @@ definitions:
     sonar: ~/.sonar/cache  # Caching SonarCloud artifacts will speed up your build
   steps:
     - step: &build-test-sonarcloud
-        name: Build, test and analyze on SonarCloud
+        name: Analizing...
         caches:
           - sonar
         script:
@@ -16,7 +16,7 @@ definitions:
           - poetry install          # Build your project and run
           - pipe: sonarsource/sonarcloud-scan:1.4.0
     - step: &check-quality-gate-sonarcloud
-        name: Check the Quality Gate on SonarCloud
+        name:  Quality Checking...
         script:
           - pipe: sonarsource/sonarcloud-quality-gate:0.1.6
 
