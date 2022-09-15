@@ -11,8 +11,7 @@ definitions:
             caches:
               - pip
             script:
-              - pip install poetry
-              - poetry shell
+              - pip install pytest
               - pytest -v tests/* --junitxml=test-reports/report.xml
               
         - step: &build-lint-flake8
