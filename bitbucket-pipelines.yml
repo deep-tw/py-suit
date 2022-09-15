@@ -6,23 +6,24 @@ clone:
 definitions:
   default:
       - parallel:
-        steps:
-    - step: &build-unit-test
-        name: Running Unit Tests
-        caches:
-          - pip
-        script:
-          - pip install poetry
-          - poetry install      
-          - if [ -f tests/* ]; then pytest -v tests/* --junitxml=test-reports/report.xml; fi
-    - step: &build-lint-flake8
-        name: Checking flake8 Rules
-        script:
-          # Enforce style consistency across Python projects https://flake8.pycqa.org/en/latest/manpage.html
-          - pip install flake8
-          - flake8 . --extend-exclude=dist,build --show-source --statistics
+        - step: &build-unit-test
+            name: Unit Test
+            caches:
+              - pip
+            script:
+              - if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+              - pip install pytest
+              - if [ -f tests/* ]; then pytest -v tests/* --junitxml=test-reports/report.xml; fi
+              
+        - step: &build-lint-flake8
+            name: Lint code
+            script:
+              # Enforce style consistency across Python projects https://flake8.pycqa.org/en/latest/manpage.html
+              - pip install flake8
+              - flake8 . --extend-exclude=dist,build --show-source --statistics
   caches:
     sonar: ~/.sonar/cache  # Caching SonarCloud artifacts will speed up your build
+  steps:
     - step: &build-test-sonarcloud
         name: Analizing Source Code 
         caches:
@@ -41,12 +42,12 @@ pipelines:                 # More info here: https://confluence.atlassian.com/bi
     master:
       - step: *build-test-sonarcloud
       - step: *check-quality-gate-sonarcloud
-      - step: *&build-unit-test
+      - step: *build-unit-test
       - step: *build-lint-flake8
 
   pull-requests:
     '**':
       - step: *build-test-sonarcloud
       - step: *check-quality-gate-sonarcloud
-      - step: *&build-unit-test
+      - step: *build-unit-test
       - step: *build-lint-flake8
