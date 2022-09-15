@@ -2,7 +2,11 @@
 main file containes the module
 """
 
+
 class PySuit:
+    '''
+    sort dict by keys and values
+    '''
     def __init__(self):
         pass
 
