@@ -12,8 +12,8 @@ definitions:
               - pip
             script:
               - pip install poetry
-              - poetry install  
-              - if [ -f tests/* ]; then pytest -v tests/* --junitxml=test-reports/report.xml; fi
+              - poetry shell
+              - pytest -v tests/* --junitxml=test-reports/report.xml
               
         - step: &build-lint-flake8
             name: Checking flake8 Rules
