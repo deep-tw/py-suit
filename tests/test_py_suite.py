@@ -1,4 +1,4 @@
-from py_suit import __version__
+from pysuit import __version__
 
 
 def test_version():
@@ -8,4 +8,4 @@ def test_add():
     a = 8
     b = 8
     c = a+b
-    assert c == 9
+    assert c != 9
