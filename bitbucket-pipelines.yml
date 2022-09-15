@@ -7,6 +7,20 @@ definitions:
   caches:
     sonar: ~/.sonar/cache  # Caching SonarCloud artifacts will speed up your build
   steps:
+    - step:
+          name: Unit Test
+          caches:
+            - pip
+          script:
+            - pip install poetry
+            - poetry install      
+            - if [ -f tests/* ]; then pytest -v tests/* --junitxml=test-reports/report.xml; fi
+    - step:
+          name: Lint code
+          script:
+            # Enforce style consistency across Python projects https://flake8.pycqa.org/en/latest/manpage.html
+            - pip install flake8
+            - flake8 . --extend-exclude=dist,build --show-source --statistics
     - step: &build-test-sonarcloud
         name: Analizing Source Code 
         caches:
