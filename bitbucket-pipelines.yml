@@ -7,7 +7,7 @@ definitions:
   default:
       - parallel:
         - step: &build-unit-test
-            name: Unit Test
+            name: Running Unit Tests
             caches:
               - pip
             script:
@@ -16,7 +16,7 @@ definitions:
               - if [ -f tests/* ]; then pytest -v tests/* --junitxml=test-reports/report.xml; fi
               
         - step: &build-lint-flake8
-            name: Lint code
+            name: Checking flake8 Rules
             script:
               # Enforce style consistency across Python projects https://flake8.pycqa.org/en/latest/manpage.html
               - pip install flake8
