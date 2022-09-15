@@ -12,7 +12,7 @@ definitions:
         caches:
           - sonar
         script:
-          - curl -sSL https://install.python-poetry.org | python3 -
+          - pip install poetry
           - poetry install          # Build your project and run
           - pipe: sonarsource/sonarcloud-scan:1.4.0
     - step: &check-quality-gate-sonarcloud
