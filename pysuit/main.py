@@ -13,5 +13,6 @@ class PySuit:
     def dictsort(self):
         print("I am sorting")
 
+
 if __name__ == '__main__':
     pysuit = PySuit()
