@@ -9,6 +9,8 @@ class PySuit:
     sort dict by keys and values
     '''
     def __init__(self):
+        """
+        """
         pass
 
     def dictsort(self, dictionary, flag):
@@ -30,11 +32,14 @@ class PySuit:
                     sortedDict[key_result[0]] = value
             # Sorting dict by keys
             else:
-                sorted_dict = sorted(
-                    list(dictionary.keys()),
-                    key=lambda x: (len(str(x)), str(x))
-                    )
-                sortedDict = {key: dictionary[key] for key in sorted_dict}
+                try:
+                    sorted_dict = sorted(
+                        list(dictionary.keys()),
+                        key=lambda x: (len(str(x)), str(x))
+                        )
+                    sortedDict = {key: dictionary[key] for key in sorted_dict}
+                except:
+                    raise Exception("Enter Dictionary")
 
             return sortedDict
 
