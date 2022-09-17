@@ -1,0 +1,51 @@
+#!/bin/bash
+. "$(dirname "$0")/_/husky.sh"
+
+config=commit-msg.config.json
+
+# set variables
+enabled=$(jq -r .enabled $config)
+revert=$(jq -r .revert $config)
+types=$(jq -r '.types[]' $config)
+
+
+if [ ! -f $config ] || [ ! $enabled ]; then
+    exit 0
+fi
+
+regexp="^("
+
+if $revert; then
+    regexp="${regexp}revert: )?(\w+)?("
+fi
+
+for type in $types
+do
+    regexp="${regexp}$type|"
+done
+
+regexp=$(echo "${regexp}" | sed 's/.$//')
+
+regexp="${regexp})(\(.+\))?: .{4,80}$"
+
+msg=$(head -1 $1)
+
+if [[ ! $msg =~ $regexp ]]; then
+  printf -v typesString '%s,' "${types[@]}"
+  echo "$(tput bel)$(tput bold)$(tput setaf 1)Invalid commit message, either you have used wrong type or scope is not enclosed inside the bracket $(tput sgr0)"
+  echo "-------------------------------------------------------"
+  echo "Valid types: $(tput bold)$(tput setaf 4)${typesString%,}$(tput sgr0)"
+  echo "-------------------------------------------------------"
+  echo "Valid format: $(tput bold)$(tput setaf 6)<type>[optional scope]: <description>
+
+        [optional body]
+
+        [optional footer(s)]$(tput sgr0)"
+  echo "-------------------------------------------------------"
+  echo "$(tput bold)$(tput setaf 5)Description length should be maximum 80 chars long.$(tput sgr0)"
+  echo "-------------------------------------------------------"
+
+  # exit with an error
+  exit 1
+fi
+echo "$(tput bold)$(tput setaf 2)Great! you are following conventional commit.$(tput sgr0)"
