@@ -57,3 +57,6 @@ Notice a bug let us know. Thanks
 ### Author
 + Main Maintainer: Deepak Patidar / Nitesh Yadav
 + Team Thoughtwin
+
+### License
++ MIT
