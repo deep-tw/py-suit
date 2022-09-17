@@ -1,9 +1,11 @@
-from pysuit import PySuit
+from pysuit import DictCollections
+
+d = DictCollections()
 
 
-pysuit = PySuit()
+a = {"b": 3, "a": 34, 67: "c", 1: 64}
 
-a = {100: 12, 6: 'd', 'b': 3, 'a': 34, 67: 'c', 1: 64}
-flag = "values"
-res = pysuit.dictsort(a, flag)
+flag = ""
+res = d.dictsort(a, flag)
+
 print(res)
