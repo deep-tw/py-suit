@@ -1,6 +1,0 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-cd frontend && yarn workspace app run lint-staged
-cd ..
-cd backend && pipenv run python -m isort .
