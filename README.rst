@@ -1,7 +1,7 @@
 PySuit
 ======
 
-A unified collection of python functions eg dictsort,netsed_iterator etc
+A unified collection of python functions eg dictsort,nested_iterator etc
 
 Purpose of the Package
 ----------------------
@@ -25,7 +25,7 @@ Features
 
 -  Collection of ListCollection
 
-   -  netsed_iterator
+   -  nested_iterator
    -  etc
 
 Getting Started
@@ -47,18 +47,29 @@ Using the short forms or abbreviated forms of indices
 
 .. code:: python
 
-   >>> from pysuit import DictCollections
-   >>> dict_collection = DictCollections()
-   >>> dict_collection.dict_sort(dictionary , flag)
+   from pysuit import DictCollections
+
+   dict_collection = DictCollections()
+
+   dict_collection.dict_sort(dictionary , flag)
 
 Examples
 ~~~~~~~~
 
 .. code:: python
 
-   >>> from pysuit import DictCollections
-   >>> dict_collection = DictCollections()
-   >>>dict_collection.dict_sort({"b": 3, "a": 34, 67: "c", 1: 64} , keys)
+   from pysuit import DictCollections
+
+.. code:: python
+
+   dict_collection = DictCollections()
+
+.. code:: python
+
+   dict_collection.dict_sort({"b": 3, "a": 34, 67: "c", 1: 64} , keys)
+
+.. code:: python
+
    Sorted Dictionary is => {1: 64, 'a': 34, 'b': 3, 67: 'c'}
 
 Contribution

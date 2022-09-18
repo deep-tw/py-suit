@@ -53,5 +53,5 @@ pipelines:                 # More info here: https://confluence.atlassian.com/bi
     '**':
       - step: *build-unit-test
       - step: *build-lint-flake8
-      - step: *build-test-sonarcloud
-      - step: *check-quality-gate-sonarcloud
+      # - step: *build-test-sonarcloud
+      # - step: *check-quality-gate-sonarcloud
