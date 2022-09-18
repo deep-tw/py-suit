@@ -6,6 +6,8 @@ authors = ["Deepak Patidar <deepakp@thoughtwin.com>"]
 keywords = ['py-suite','suite','python bugs', 'features','py-features']
 readme = 'README.md'
 license = "MIT"
+repository = "https://github.com/deep-tw/py-suit.git"
+homepage = "https://github.com/deep-tw/py-suit.git"
 
 classifiers=[
         "License :: OSI Approved :: MIT License",
