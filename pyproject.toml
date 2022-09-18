@@ -6,6 +6,18 @@ authors = ["Deepak Patidar <deepakp@thoughtwin.com>"]
 keywords = ['py-suite','suite','python bugs', 'features','py-features']
 readme = 'README.md'
 license = "MIT"
+repository = "https://github.com/deep-tw/py-suit.git"
+homepage = "https://github.com/deep-tw/py-suit.git"
+
+classifiers=[
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Operating System :: OS Independent",
+    ]
 
 [tool.poetry.dependencies]
 python = ">= 3.7.0"
@@ -14,3 +26,4 @@ pytest = "^7.1.3"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
