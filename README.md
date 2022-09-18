@@ -1,4 +1,5 @@
 # PySuit
+[![Read the Docs](https://readthedocs.org/projects/py-suit/badge/?version=latest)](py-suit.rtfd.io/en/latest/)
 A unified collection of python functions  eg dictsort,nested_iterator etc
 
 #### Purpose of the Package
