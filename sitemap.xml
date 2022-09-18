@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://thoughtwin-in-house-admin@bitbucket.org/thoughtwin-in-house/pysuit.git/</loc>
-         <lastmod>2022-09-17</lastmod>
+         <lastmod>2022-09-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://thoughtwin-in-house-admin@bitbucket.org/thoughtwin-in-house/pysuit.git/api_reference/</loc>
-         <lastmod>2022-09-17</lastmod>
+         <lastmod>2022-09-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://thoughtwin-in-house-admin@bitbucket.org/thoughtwin-in-house/pysuit.git/userguide/</loc>
-         <lastmod>2022-09-17</lastmod>
+         <lastmod>2022-09-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

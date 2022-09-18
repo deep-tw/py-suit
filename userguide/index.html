@@ -46,6 +46,8 @@
               </ul>
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">User Guide</a>
+    <ul class="current">
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -75,7 +77,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h3 id="user-guide">User Guide</h3>
+<h3 id="usage">Usage</h3>
+<p>Using the short forms or abbreviated forms of indices</p>
+<pre><code class="language-python">from pysuit import DictCollections
+
+dict_collection = DictCollections()
+
+dict_collection.dict_sort(dictionary , flag)
+
+</code></pre>
+<h4 id="examples">Examples</h4>
+<pre><code class="language-python">from pysuit import DictCollections
+</code></pre>
+<pre><code class="language-python">dict_collection = DictCollections()
+</code></pre>
+<pre><code class="language-python">dict_collection.dict_sort({&quot;b&quot;: 3, &quot;a&quot;: 34, 67: &quot;c&quot;, 1: 64} , keys)
+</code></pre>
+<pre><code class="language-python">Sorted Dictionary is =&gt; {1: 64, 'a': 34, 'b': 3, 67: 'c'}
+</code></pre>
               
             </div>
           </div><footer>

@@ -100,7 +100,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="pysuit">PySuit</h1>
-<p>A unified collection of python functions  eg dictsort,netsed_iterator etc</p>
+<p>A unified collection of python functions  eg dictsort,nested_iterator etc</p>
 <h4 id="purpose-of-the-package">Purpose of the Package</h4>
 <ul>
 <li>The purpose of the package is to provide a collection of fuction and module indices in one unified libary</li>
@@ -119,7 +119,7 @@
 </ul>
 </li>
 <li>Collection of ListCollection<ul>
-<li>netsed_iterator</li>
+<li>nested_iterator</li>
 <li>etc </li>
 </ul>
 </li>
@@ -131,19 +131,21 @@
 </code></pre>
 <h3 id="usage">Usage</h3>
 <p>Using the short forms or abbreviated forms of indices</p>
-<pre><code class="language-python">&gt;&gt;&gt; from pysuit import DictCollections
-&gt;&gt;&gt; dict_collection = DictCollections()
-&gt;&gt;&gt; dict_collection.dict_sort(dictionary , flag)
+<pre><code class="language-python">from pysuit import DictCollections
 
+dict_collection = DictCollections()
+
+dict_collection.dict_sort(dictionary , flag)
 
 </code></pre>
 <h4 id="examples">Examples</h4>
-<pre><code class="language-python">&gt;&gt;&gt; from pysuit import DictCollections
-&gt;&gt;&gt; dict_collection = DictCollections()
-&gt;&gt;&gt;dict_collection.dict_sort({&quot;b&quot;: 3, &quot;a&quot;: 34, 67: &quot;c&quot;, 1: 64} , keys)
-Sorted Dictionary is =&gt; {1: 64, 'a': 34, 'b': 3, 67: 'c'}
-
-
+<pre><code class="language-python">from pysuit import DictCollections
+</code></pre>
+<pre><code class="language-python">dict_collection = DictCollections()
+</code></pre>
+<pre><code class="language-python">dict_collection.dict_sort({&quot;b&quot;: 3, &quot;a&quot;: 34, 67: &quot;c&quot;, 1: 64} , keys)
+</code></pre>
+<pre><code class="language-python">Sorted Dictionary is =&gt; {1: 64, 'a': 34, 'b': 3, 67: 'c'}
 </code></pre>
 <h3 id="contribution">Contribution</h3>
 <p>Contributions are welcome
@@ -204,5 +206,5 @@ Notice a bug let us know. Thanks</p>
 
 <!--
 MkDocs version : 1.3.1
-Build Date UTC : 2022-09-17 15:54:01.600638+00:00
+Build Date UTC : 2022-09-18 10:26:58.586798+00:00
 -->

@@ -50,6 +50,8 @@
               </ul>
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">API</a>
+    <ul class="current">
+    </ul>
                 </li>
               </ul>
       </div>
@@ -75,7 +77,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h3 id="api-documentation">API Documentation</h3>
+<p>This documentation gives you  overview of the Pysuit functions and method</p>
+<ul>
+<li><a href="#DictCollections">DictCollections</a><ul>
+<li><a href="#dictsort">dictsort</a></li>
+</ul>
+</li>
+</ul>
+<p><strong><em>DictCollections</em></strong><a name="DictCollections"><br></p>
+<p><strong><em>dictsort</em></strong><a name="dictsort"></p>
+<hr />
+<!-- :sunglasses: See [UserGuid](userguide.md) -->
+<p>User Guide to Kick start a collection</p>
+<p>The dict sort function is used to sort the dictionary based on the keys and values</p>
+<h3 id="usage">Usage</h3>
+<p>Using the short forms or abbreviated forms of indices</p>
+<pre><code class="language-python">from pysuit import DictCollections
+
+dict_collection = DictCollections()
+
+dict_collection.dict_sort(dictionary , flag)
+
+</code></pre>
+<h4 id="examples">Examples</h4>
+<pre><code class="language-python">from pysuit import DictCollections
+
+dict_collection = DictCollections()
+
+dict_collection.dict_sort({&quot;b&quot;: 3, &quot;a&quot;: 34, 67: &quot;c&quot;, 1: 64} , keys)
+
+Output =&gt; {1: 64, 'a': 34, 'b': 3, 67: 'c'}
+
+</code></pre>
               
             </div>
           </div><footer>
