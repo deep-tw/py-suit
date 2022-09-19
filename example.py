@@ -2,10 +2,9 @@ from pysuit import DictCollections
 
 d = DictCollections()
 
-
-a = {"b": 3, "a": 34, 67: "c", 1: 64}
+a = [1,2,3,56,4]
 
 flag = ""
-res = d.dictsort(a, flag)
+res = d.dictsort()
 
 print(res)
