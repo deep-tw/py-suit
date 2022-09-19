@@ -18,7 +18,7 @@ class DictCollections(PySuit):
 
     __name__ = "pysuit.DictCollections()"
 
-    def dictsort(self, dictionary, flag):
+    def dictsort(self, dictionary, flag='keys'):
         """
         Sorting dict by keys or values
         """
@@ -41,6 +41,6 @@ class DictCollections(PySuit):
 
             return final_dict
 
-        except Exception as e:
-            logging.exception(f"error while accessing the dict: {e}")
-            raise e
+        except Exception as errors:
+            logging.exception(f"error while accessing the dict: {errors}")
+            raise errors
