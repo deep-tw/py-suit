@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
-from .main import PySuit
+from pysuit.modules.dict_collection import DictCollections
 
 __version__ = '0.1.0'
 
 
-__all__ = ("PySuit",)
+__all__ = ("DictCollections",)

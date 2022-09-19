@@ -1,0 +1,8 @@
+site_name: pysuit
+site_url: https://thoughtwin-in-house-admin@bitbucket.org/thoughtwin-in-house/pysuit.git
+nav:
+  - Home: index.md
+  - User Guide: userguide.md
+  - API: api_reference.md
+
+theme: readthedocs

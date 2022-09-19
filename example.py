@@ -1,12 +1,10 @@
-# -*- coding: utf-8 -*-
+from pysuit import DictCollections
 
-from pysuit import PySuit
+d = DictCollections()
 
+a = {"b": 3, "a": 34, 67: "c", 1: 64}
 
-pysuit = PySuit()
-
-a = {"": 12, 6: 'd', 'b': 3, 'a': 34, 67: 'c', 1: 64}
-# a = []
 flag = ""
-res = pysuit.dictsort(a, flag)
+res = d.dictsort(a, flag)
+
 print(res)
