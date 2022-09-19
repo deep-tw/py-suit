@@ -2,8 +2,10 @@
 import pytest
 from unittest.mock import Mock, patch
 from faker import Faker
-from pysuit.main import PySuit
+from pysuit.modules.dict_collection import DictCollections
 from pysuit import __version__
+
+
 
 
 class TestPySuit():
@@ -16,16 +18,25 @@ class TestPySuit():
     def test_version(self):
         assert __version__ == '0.1.0'
 
-    def dictionary_arg(self, fake):
-        dictionary = {}
+    def test_dictionary_arg(self, fake):
+        self.dictionary = {}
         for number in range(10):
             key = fake.word()
             value = fake.random_int()
-            dictionary.update({key: value})
-        return dictionary
+            self.dictionary.update({key: value})
+        
+    
+        dic = self.dictionary
+        res = dic.keys()
+        obj = DictCollections()
+        result = obj.dictsort(dic, "values")
+        res1 = dic.keys()
 
-    def test_dict_with_valid_keys_values(self, Mock, dictionary_arg):
-        d = Mock(PySuit)
+        assert dic == result
+
+    
+        
+
       
        
 
