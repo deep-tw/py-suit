@@ -35,11 +35,11 @@ class TestNestedList():
     def test_passes_with_valid_nested_list(self, fake, nested_list):
 
         sample_list = [
-            fake.random_int(),[
-                fake.random_int(),fake.word(),fake.random_int()
+            fake.pylist(),[
+                fake.pylist(),fake.word(),fake.random_int()
                 ],
             fake.word(),fake.random_int(),[
-                fake.random_int(),[
+                fake.pylist(),[
                     fake.word(),fake.random_int()
                     ]
                 ]
@@ -58,11 +58,11 @@ class TestNestedList():
         result= nested_list.removNestings(sample_list)
         print(result)
         
-        assert len(result) != 0 , "the list is non empty"
+        assert len(result) == 0 , "the list is non empty"
 
 
 
-    def test_passes_with_valid_tuple(self, fake, nested_list):
+    def test_passes_with_valid_set(self, fake, nested_list):
 
         sample_set=(
             fake.random_int(),
@@ -90,6 +90,3 @@ class TestNestedList():
         result = nested_list.removNestings(sample_dict)
 
         assert result != sample_dict
-
-
-
