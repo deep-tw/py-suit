@@ -33,7 +33,7 @@ class NestedCollections(PySuit):
         """
 
         try:
-
+           
             if type(nested_element) == dict:
                 for key,value in nested_element.items():
                     if isinstance(value, dict):
