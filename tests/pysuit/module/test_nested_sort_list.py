@@ -25,7 +25,7 @@ class TestNestedList():
 
         assert isinstance(nested_list, PySuit)
 
-    def test_failed_with_no_input_nested_list(self, fake, nested_list ):
+    def test_failed_with_no_input_nested_list(self, fake, nested_list):
 
         with pytest.raises(TypeError):
             nested_list.removNestings()
@@ -33,16 +33,18 @@ class TestNestedList():
     def test_passes_with_valid_nested_list(self, fake, nested_list):
 
         sample_list = [
-                fake.random_int(),[
-                fake.random_int(),fake.word(),fake.random_int()
-                ],
-            fake.word(),fake.random_int(),[
-                fake.random_int(),[
-                    fake.word(),fake.random_int()
-                    ]
+            fake.random_int(),
+            [
+                fake.random_int(), fake.word(),
+                fake.random_int()
+            ],
+            fake.word(), fake.random_int(),
+            [
+                fake.random_int(), [
+                    fake.word(), fake.random_int()
                 ]
-        ]
-
+            ]
+            ]
         result = nested_list.removNestings(sample_list)
         print(result)
         assert result != sample_list
@@ -52,21 +54,26 @@ class TestNestedList():
         sample_list = []
         print(sample_list)
 
-        result= nested_list.removNestings(sample_list)
+        result = nested_list.removNestings(sample_list)
         print(result)
-        
-        assert  sample_list == result 
+        assert sample_list == result
 
     def test_passes_with_valid_nested_tuple(self, fake, nested_list):
 
-        sample_tuple=(
+        sample_tuple = (
             fake.random_int(),
             fake.random_int(),
             fake.random_int(),
             fake.random_int(),
-            (fake.pyfloat(),(fake.word()),
-            fake.word(), 
-            (fake.random_int(),fake.random_int(),fake.random_int())))
+            (fake.pyfloat(), (
+                fake.word()),
+                fake.word(), (
+                    fake.random_int(),
+                    fake.random_int(),
+                    fake.random_int()
+                )
+            )
+        )
 
         result = nested_list.removNestings(sample_tuple)
 
@@ -74,13 +81,11 @@ class TestNestedList():
 
     def test_passes_with_valid_nested_set(self, fake, nested_list):
 
-        sample_set={
+        sample_set = {
                 fake.random_int(),
                 fake.word(),
-                fake.random_int(),fake.word(),
-                frozenset([fake.random_int(),
-                fake.random_int()])
-                } 
+                fake.random_int(), fake.word(),
+                frozenset([fake.random_int(), fake.random_int()])}
 
         result = nested_list.removNestings(sample_set)
 
