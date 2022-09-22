@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import pytest
+import random
 from faker import Faker
 from pysuit.modules.exclude_random import ExcludeRandom
 from pysuit.interface import PySuit
@@ -52,6 +53,5 @@ class TestExcludeRandom():
         start = fake.random_int()
         stop = fake.random_int()
         number_of_excludes = fake.random_int()
-        
-        result = random_exclude.exclude_random(self, fake, number_of_excludes)
+        result = random_exclude.exclude_random(start, stop, number_of_excludes)
         print(result)
