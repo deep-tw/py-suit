@@ -46,7 +46,7 @@ class TestNestedList():
             ]
             ]
         result = nested_list.removNestings(sample_list)
-        print(result)
+        
         assert result != sample_list
 
     def test_passes_with_empty_nested_list_input_type(self, fake, nested_list):

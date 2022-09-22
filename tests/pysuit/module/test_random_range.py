@@ -54,4 +54,3 @@ class TestExcludeRandom():
         stop = fake.random_int()
         number_of_excludes = fake.random_int()
         result = random_exclude.exclude_random(start, stop, number_of_excludes)
-        print(result)
