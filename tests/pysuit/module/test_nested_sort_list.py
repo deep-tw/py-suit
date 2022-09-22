@@ -52,10 +52,7 @@ class TestNestedList():
     def test_passes_with_empty_nested_list_input_type(self, fake, nested_list):
 
         sample_list = []
-        print(sample_list)
-
         result = nested_list.removNestings(sample_list)
-        print(result)
         assert sample_list == result
 
     def test_passes_with_valid_nested_tuple(self, fake, nested_list):
