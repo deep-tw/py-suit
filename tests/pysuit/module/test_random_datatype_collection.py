@@ -57,7 +57,7 @@ class TestDataTypeCollection():
             fake.random_int(): random.choice(random_list),
             fake.random_int(): random.choice(random_list),
             fake.random_int(): random.choice(random_list),
-            }
+        }
         size = len(random_data_type)
         result = random_collection.fake_random_datatype(dict, size)
         assert len(random_data_type) == len(result)
