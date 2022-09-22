@@ -27,15 +27,19 @@ class DictCollections(PySuit):
             # Sorting dict by values
             if flag.lower() == "values":
                 sorted_dict = sorted(
-                    list(dictionary.values()), key=lambda x: (len(str(x)), str(x))
+                    list(dictionary.values()),
+                    key=lambda x: (len(str(x)), str(x))
                 )
                 for value in sorted_dict:
-                    key_result = [key for key in dictionary if dictionary[key] == value]
+                    key_result = [
+                        key for key in dictionary if dictionary[key] == value
+                        ]
                     final_dict[key_result[0]] = value
             # Sorting dict by keys
             else:
                 sorted_dict = sorted(
-                    list(dictionary.keys()), key=lambda x: (len(str(x)), str(x))
+                    list(dictionary.keys()),
+                    key=lambda x: (len(str(x)), str(x))
                 )
                 final_dict = {key: dictionary[key] for key in sorted_dict}
 

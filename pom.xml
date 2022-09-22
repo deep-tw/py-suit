@@ -1,0 +1,5 @@
+<properties>
+    <sonar.projectkey>deep-tw-01</sonar.projectkey>
+    <sonar.organization>deep-tw</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+</properties>

@@ -86,3 +86,4 @@ class TestDictCollection():
         result = dict_collection.dictsort(input_dict, "values")
 
         assert result == input_dict
+
