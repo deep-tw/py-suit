@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import pytest
-import random
 from faker import Faker
 from pysuit.modules.exclude_random import ExcludeRandom
 from pysuit.interface import PySuit
+
 
 class TestExcludeRandom():
 
@@ -24,7 +24,6 @@ class TestExcludeRandom():
     def test_object_of_type_random_exclude(self, random_exclude):
 
         assert isinstance(random_exclude, PySuit)
-
 
     def test_passes_with_no_start(self, fake, random_exclude):
         start = None
@@ -50,8 +49,10 @@ class TestExcludeRandom():
             random_exclude.exclude_random(start, stop, number_of_excludes)
 
     def test_passes_with_valid_exclude_random_number(self, fake, random_exclude):
+
+        random_number = fake.random_int()
         start = fake.random_int()
         stop = fake.random_int()
         number_of_excludes = fake.random_int()
-        result = random_exclude.exclude_random(start, stop, number_of_excludes)
-        print(result)
+        result = random_exclude.exclude_random(start, stop, number_of_excludes)       
+        assert result != random_number

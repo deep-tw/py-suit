@@ -24,11 +24,11 @@ class ExcludeRandom(PySuit):
         """
         try:
             exclude_number_list = []
-            if stop > start and number_of_excludes <= ((stop-start)-1):
+            if stop > start and number_of_excludes <= ((stop - start) - 1):
                 for number in range(number_of_excludes):
                     exclude_number = int(
-                        input("enterthe excluded number"+str(number+1)+":")
-                        )
+                        input("enterthe excluded number" + str(number + 1) + ":")
+                    )
                     if (exclude_number >= start) and (exclude_number <= stop):
                         exclude_number_list.append(exclude_number)
                     else:
@@ -37,7 +37,7 @@ class ExcludeRandom(PySuit):
                 raise Exception("enter valid number which belongs to range")
             return choice(
                 list(set(range(start, stop)) - set(exclude_number_list))
-                )
+            )
         except Exception as errors:
             logging.exception(f"error while accessing exclude_random:{errors}")
             raise errors
