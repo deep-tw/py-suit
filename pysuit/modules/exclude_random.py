@@ -4,7 +4,8 @@
 ## Version 0.1 ##
 
 # ---- List of fuctions -----
-# exclude_random = this function is work for exluding the number
+# exclude_random = this function is work for
+exluding the number and print random number.
 """
 import logging
 from pysuit.interface import PySuit
@@ -19,25 +20,26 @@ class ExcludeRandom(PySuit):
 
     def exclude_random(self, start, stop, number_of_excludes):
         """
-        this function is work for excluding the number given by the
-        user and generate a random number between the range.
+        this function is work for excluding the number given by
+        the user and generate a random number between the range.
+
         """
         try:
             exclude_number_list = []
-            if stop > start and number_of_excludes <= ((stop - start) - 1):
-                for number in range(number_of_excludes):
-                    exclude_number = int(
-                        input("enterthe excluded number" + str(number + 1) + ":")
-                    )
-                    if (exclude_number >= start) and (exclude_number <= stop):
-                        exclude_number_list.append(exclude_number)
+            if stop > start and len(number_of_excludes) <= ((stop - start) - 1):
+                for number in number_of_excludes:
+                    if (number >= start) and (number <= stop):
+                        exclude_number_list.append(number)
                     else:
-                        raise Exception("Enter valid num belongs to range")
+                        raise Exception
+                        ("Enter valid number belongs start and stop range")
             else:
-                raise Exception("enter valid number which belongs to range")
-            return choice(
-                list(set(range(start, stop)) - set(exclude_number_list))
-            )
+                raise Exception
+                ("please enter the valid number which belongs to range")
+
+            choice(list(set(range(start, stop)) - set(exclude_number_list)))
+            return
+
         except Exception as errors:
-            logging.exception(f"error while accessing exclude_random:{errors}")
+            logging.exception(f"error while accessing the exclude_random: {errors}")
             raise errors
