@@ -4,6 +4,7 @@ from faker import Faker
 from pysuit.modules.exclude_random import ExcludeRandom
 from pysuit.interface import PySuit
 
+
 class TestExcludeRandom():
 
     @pytest.fixture
@@ -24,12 +25,11 @@ class TestExcludeRandom():
 
         assert isinstance(random_exclude, PySuit)
 
-
     def test_passes_with_no_start(self, fake, random_exclude):
         start = None
         stop = fake.random_int()
         number_of_excludes = fake.random_int()
-        
+
         with pytest.raises(Exception):
             random_exclude.exclude_random(start, stop, number_of_excludes)
 
@@ -48,10 +48,18 @@ class TestExcludeRandom():
         with pytest.raises(Exception):
             random_exclude.exclude_random(start, stop, number_of_excludes)
 
-    def test_passes_with_valid_exclude_random_number(self, fake, random_exclude):
-        start = fake.random_int()
-        stop = fake.random_int()
-        number_of_excludes = fake.random_int()
-        
-        result = random_exclude.exclude_random(self, fake, number_of_excludes)
+    def test_passes_with_exclude_random_number(self, fake, random_exclude):
+        number_of_excludes = [
+            fake.random_int(1, 10),
+            fake.random_int(1, 10),
+            fake.random_int(1, 10),
+            fake.random_int(1, 10),
+            fake.random_int()
+            ]
+        start = min(number_of_excludes) - 1
+        stop = max(number_of_excludes) + 1
+        # with pytest.raises(Exception):
+        #     random_exclude.exclude_random(start, stop, number_of_excludes)
+
+        result = random_exclude.exclude_random(start, stop, number_of_excludes)
         print(result)

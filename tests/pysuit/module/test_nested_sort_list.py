@@ -58,7 +58,7 @@ class TestNestedList():
         result= nested_list.removNestings(sample_list)
         print(result)
         
-        assert len(result) == 0 , "the list is non empty"
+        assert len(result) != 0 , "the list is non empty"
 
 
 
