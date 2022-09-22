@@ -63,5 +63,5 @@ class TestExcludeRandom():
         
         result = random_exclude.exclude_random(start, stop, number_of_excludes)
 
-        assert random_number == result
+        assert random_number != result
         

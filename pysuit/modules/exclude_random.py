@@ -37,8 +37,8 @@ class ExcludeRandom(PySuit):
                 raise Exception
                 ("please enter the valid number which belongs to range")
 
-            choice(list(set(range(start, stop)) - set(exclude_number_list)))
-            return
+            result = choice(list(set(range(start, stop)) - set(exclude_number_list)))
+            return result
 
         except Exception as errors:
             logging.exception(f"error while accessing the exclude_random: {errors}")
