@@ -1,8 +1,6 @@
 # PySuit
 
-[![Read the Docs](https://readthedocs.org/projects/py-suit/badge/?version=latest)](py-suit.rtfd.io/en/latest/)
-
-[![codecov](https://codecov.io/github/deep-tw/py-suit/branch/release/graph/badge.svg?token=WR57HD3UTR)](https://codecov.io/github/deep-tw/py-suit)
+[![Read the Docs](https://readthedocs.org/projects/py-suit/badge/?version=latest)](py-suit.rtfd.io/en/latest/) [![codecov](https://codecov.io/github/deep-tw/py-suit/branch/release/graph/badge.svg?token=WR57HD3UTR)](https://codecov.io/github/deep-tw/py-suit)
 
 A unified collection of python functions  eg dictsort,nested_iterator etc
 
