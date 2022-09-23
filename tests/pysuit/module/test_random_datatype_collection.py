@@ -47,7 +47,7 @@ class TestDataTypeCollection():
         random_list = list
         result = random_collection.fake_random_datatype(random_list, 0)
         assert type(result) == random_list
-        
+
     def test_pass_with_valid_datatype_and_size(self, fake, random_collection):
 
         random_list = [fake.word(), fake.pyfloat(), fake.random_int()]

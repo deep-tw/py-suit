@@ -20,7 +20,7 @@ from pysuit import DataTypeCollection
 # print(res)
 # lst = ('a', ['bb', ('ccc', 'ddd'), 'ee', 'ff'], 'g', 'h')
 # obj = NestedCollections()
-# res = obj.removNestings(lst)
+# res = obj.nested_iterator(lst)
 # print(res)
 
 obj = DataTypeCollection()

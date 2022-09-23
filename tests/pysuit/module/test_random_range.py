@@ -60,8 +60,7 @@ class TestExcludeRandom():
         ]
         start = min(number_of_excludes) - 1
         stop = max(number_of_excludes) + 1
-        
+
         result = random_exclude.exclude_random(start, stop, number_of_excludes)
 
         assert random_number != result
-        

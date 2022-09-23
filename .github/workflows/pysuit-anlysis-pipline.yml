@@ -36,9 +36,9 @@ jobs:
     - name: Flake8 Rules
       run: |
         # stop the build if there are Python syntax errors or undefined names
-        poetry run flake8 pysuit tests --count  --show-source --statistics
+        poetry run flake8 pysuit tests --ignore=C901,E501,W503,W605,F403,F405 --count  --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        poetry run flake8 pysuit tests --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        poetry run flake8 pysuit tests --ignore=C901,E501,W503,W605,F403,F405 --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Checking Unit Tests 
       run: |
         poetry run pytest tests
