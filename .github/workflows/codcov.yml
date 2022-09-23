@@ -26,15 +26,7 @@ jobs:
       #   curl -Os https://uploader.codecov.io/latest/linux/codecov
       #   chmod +x codecov
         # ./codecov -t ${CODECOV_TOKEN}
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v1
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        env_vars: OS,PYTHON
         fail_ci_if_error: true
-        files: .coverage
-        flags: unittests
-        name: codecov-umbrella
-        path_to_write_report: ./coverage/codecov_report.txt
-        verbose: true
-        disable_default_path_fixes: true
-        
+      
