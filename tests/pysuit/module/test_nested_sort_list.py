@@ -11,6 +11,7 @@ class TestNestedList():
     def fake(self):
         return Faker()
 
+
     @pytest.fixture
     def nested_list(self):
 
