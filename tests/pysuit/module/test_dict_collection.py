@@ -38,6 +38,11 @@ class TestDictCollection():
 
         assert result == input_dict
 
+    def test_passes_with_no_dict(self, fake, dict_collection):
+
+        with pytest.raises(AttributeError):
+            dict_collection.dictsort("values")
+
     def test_failed_with_invaild_dict(self, fake, dict_collection):
 
         input_dict = [
@@ -49,7 +54,19 @@ class TestDictCollection():
         ]
 
         with pytest.raises(AttributeError):
-            dict_collection.dictsort(input_dict)
+            dict_collection.dictsort(input_dict, 'keys')
+
+    def test_passes_with_invalid_flag(self, fake, dict_collection):
+
+        input_dict = {
+            fake.word(): fake.random_int(),
+            fake.word(): fake.word(),
+            fake.word(): fake.pyfloat(),
+            fake.word(): fake.pyfloat(),
+            fake.word(): fake.word(),
+        }
+        with pytest.raises(AttributeError):
+            dict_collection.dictsort(input_dict, None)
 
     def test_failed_with_no_input_dict(self, fake, dict_collection):
 
