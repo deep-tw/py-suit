@@ -18,7 +18,7 @@ jobs:
         poetry add  pytest pytest-cov
         poetry install
     - name: Run tests and collect coverage
-      run: poetry run pytest --cov 
+      run: poetry run pytest --cov-report term --cov-report xml:coverage.xml --cov=pysuit
     - name: Upload coverage reports to Codecov
       # run: |
       #   Replace `linux` below with the appropriate OS
@@ -26,7 +26,14 @@ jobs:
       #   curl -Os https://uploader.codecov.io/latest/linux/codecov
       #   chmod +x codecov
         # ./codecov -t ${CODECOV_TOKEN}
-      uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v3
       with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        env_vars: OS,PYTHON
         fail_ci_if_error: true
-      
+        files: coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+        path_to_write_report: ./coverage/codecov_report.txt
+        verbose: true
+        
