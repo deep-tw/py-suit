@@ -1,6 +1,10 @@
 PySuit
 ======
 
+|Read the Docs|
+
+|codecov|
+
 A unified collection of python functions eg dictsort,nested_iterator etc
 
 Purpose of the Package
@@ -87,3 +91,8 @@ License
 -------
 
 -  MIT
+
+.. |Read the Docs| image:: https://readthedocs.org/projects/py-suit/badge/?version=latest
+   :target: py-suit.rtfd.io/en/latest/
+.. |codecov| image:: https://codecov.io/github/deep-tw/py-suit/branch/release/graph/badge.svg?token=WR57HD3UTR
+   :target: https://codecov.io/github/deep-tw/py-suit
