@@ -54,8 +54,6 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Quality Checking
         uses: SonarSource/sonarcloud-github-action@master
-      - name: poetry install
-        run: pip install poetry
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
