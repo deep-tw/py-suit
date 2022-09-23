@@ -2,6 +2,7 @@
 
 [![Read the Docs](https://readthedocs.org/projects/py-suit/badge/?version=latest)](py-suit.rtfd.io/en/latest/)
 
+[![codecov](https://codecov.io/gh/deep-tw/pysuit/branch/release/graph/badge.svg)](https://codecov.io/gh/deep-tw/pysuit)
 
 A unified collection of python functions  eg dictsort,nested_iterator etc
 
