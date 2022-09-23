@@ -48,7 +48,7 @@ jobs:
   sonarcloud:
     name: Analizing Source Code
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master' or github.ref == 'refs/heads/release'
+    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
         with:
