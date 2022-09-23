@@ -2,11 +2,12 @@ name: Pysuit Analysis
 
 on:
   push:
+    branches:
     - "*"
 
   pull_request:
-    branches: [ "release" ]
-    branches: [ "master" ]
+    branches:
+    - "*"
 
 
 jobs:
