@@ -29,9 +29,9 @@ class TestNestedList():
 
         with pytest.raises(TypeError):
             nested_list.nested_iterator()
-            
+
     def test_failed_with_invalid_nested_list(self, fake, nested_list):
-        sample_input  = fake.random_int(1, 100)
+        sample_input = fake.random_int(1, 100)
         with pytest.raises(Exception):
             nested_list.nested_iterator(sample_input)
 
