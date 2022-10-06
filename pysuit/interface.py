@@ -5,7 +5,7 @@ class PySuit:
     fisrt place.
     """
 
-    __name__ = "pusuit.PySuit()"
+    __name__ = "pysuit.PySuit()"
 
     def _validate_item(self, item):
         """
