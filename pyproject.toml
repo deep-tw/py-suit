@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pysuit"
-version = "0.1.0"
+version = "1.0.0"
 description = "This package will resolve all small intigrities of python data structures(List,Tuple,Dictionary,Set) which are not provided by-default."
 authors = ["Deepak Patidar <deepakp@thoughtwin.com>"]
 keywords = ['py-suite','suite','python bugs', 'features','py-features']
