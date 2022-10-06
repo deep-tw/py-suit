@@ -61,3 +61,29 @@ class TestDataTypeCollection():
         size = len(random_data_type)
         result = random_collection.fake_random_datatype(dict, size)
         assert len(random_data_type) == len(result)
+        
+    def test_pass_with_list_datatype_and_size(self, fake, random_collection):
+        
+        random_list = list
+        size = fake.random_int()
+        result = random_collection.fake_random_datatype(random_list, size)
+        assert type(result) == random_list
+        assert size == len(result)
+        
+    def test_pass_with_tuple_datatype_and_size(self, fake, random_collection):
+        
+        random_tuple = tuple
+        size = fake.random_int()
+        result = random_collection.fake_random_datatype(random_tuple, size)
+        assert type(result) == random_tuple
+        assert size == len(result)
+        
+    def test_pass_with_set_datatype_and_size(self, fake, random_collection):
+        
+        random_set = set
+        size = 5
+        result = random_collection.fake_random_datatype(random_set, size)
+        assert type(result) == random_set
+        assert size == len(result)
+        
+        
