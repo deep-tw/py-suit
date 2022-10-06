@@ -1,2 +1,5 @@
 MarkDown to RST
 pandoc README.md --from markdown --to rst -s -o README.rst
+
+Run Covrage
+poetry run pytest --cov-report term --cov-report html:coverage.html --cov=pysuit
