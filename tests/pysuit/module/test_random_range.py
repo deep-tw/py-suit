@@ -33,7 +33,7 @@ class TestExcludeRandom():
         with pytest.raises(Exception):
             random_exclude.exclude_random(start, stop, number_of_excludes)
 
-    def test_passes_with_no_stop(self, fake, random_exclude):
+    def test_failed_with_no_stop(self, fake, random_exclude):
         start = fake.random_int()
         stop = None
         number_of_excludes = fake.random_int()
@@ -41,7 +41,7 @@ class TestExcludeRandom():
         with pytest.raises(Exception):
             random_exclude.exclude_random(start, stop, number_of_excludes)
 
-    def test_passes_with_no_number_of_excludes(self, fake, random_exclude):
+    def test_failed_with_no_number_of_excludes(self, fake, random_exclude):
         start = fake.random_int()
         stop = fake.random_int()
         number_of_excludes = None
@@ -64,3 +64,19 @@ class TestExcludeRandom():
         result = random_exclude.exclude_random(start, stop, number_of_excludes)
 
         assert random_number != result
+
+    def test_failed_with_invalid_start_stop(self, fake, random_exclude):
+        start = 5
+        stop = 1
+        number_of_excludes = fake.random_int()
+
+        with pytest.raises(ValueError):
+            random_exclude.exclude_random(start, stop, number_of_excludes)
+
+    def test_failed_with_invalid_number(self, fake, random_exclude):
+        start = 1
+        stop = 5
+        number_of_excludes = [10, 20]
+
+        with pytest.raises(ValueError):
+            random_exclude.exclude_random(start, stop, number_of_excludes)

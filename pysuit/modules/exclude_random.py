@@ -31,11 +31,9 @@ class ExcludeRandom(PySuit):
                     if (number >= start) and (number <= stop):
                         exclude_number_list.append(number)
                     else:
-                        raise Exception
-                        ("Enter valid number belongs start and stop range")
+                        raise ValueError("Enter valid number belongs start and stop range")
             else:
-                raise Exception
-                ("please enter the valid number which belongs to range")
+                raise ValueError("please enter the valid number which belongs to range")
 
             result = choice(list(set(range(start, stop)) - set(exclude_number_list)))
             return result
