@@ -21,7 +21,7 @@ classifiers=[
 
 [tool.poetry.dependencies]
 python = ">= 3.7.0"
-Faker = "^14.2.0"
+
 
 [build-system]
 requires = ["poetry-core"]
