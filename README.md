@@ -8,6 +8,10 @@ A unified collection of python functions  eg dictsort,nested_iterator etc
 #### Purpose of the Package
 + The purpose of the package is to provide a collection of fuction and module indices in one unified libary
 
+#### Documentation
++ The official documentation is hosted on readthedocs.io: https://py-suit.readthedocs.io/en/latest/
+
+
 
 ### Features
 +  Collection of PySuit
