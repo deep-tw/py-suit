@@ -18,7 +18,7 @@ class NestedCollections(PySuit):
     """
     output = []
 
-    def removNestings(self, nested_element):
+    def nested_iterator(self, nested_element):
 
         """
         function used for removing nested
@@ -32,14 +32,14 @@ class NestedCollections(PySuit):
                 for element in nested_element:
                     if type(element) in [tuple, frozenset]:
 
-                        self.removNestings(element)
+                        self.nested_iterator(element)
                     else:
                         self.output.append(element)
 
             else:
                 for element in nested_element:
                     if type(element) in [list, tuple, set]:
-                        self.removNestings(element)
+                        self.nested_iterator(element)
 
                     else:
                         self.output.append(element)
@@ -47,6 +47,7 @@ class NestedCollections(PySuit):
         except Exception as e:
 
             raise e
+
         if type(nested_element) is tuple:
             return tuple(self.output)
         elif type(nested_element) is set:

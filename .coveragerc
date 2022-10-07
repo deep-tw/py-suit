@@ -1,0 +1,5 @@
+[run]
+disable_warnings=include-ignore
+[report]
+show_missing = true
+precision = 2

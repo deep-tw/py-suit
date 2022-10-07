@@ -39,7 +39,7 @@ class TestDictCollection():
         assert result == input_dict
 
     def test_passes_with_no_dict(self, fake, dict_collection):
-        
+
         with pytest.raises(AttributeError):
             dict_collection.dictsort("values")
 
@@ -86,4 +86,3 @@ class TestDictCollection():
         result = dict_collection.dictsort(input_dict, "values")
 
         assert result == input_dict
-

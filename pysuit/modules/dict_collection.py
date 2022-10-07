@@ -33,7 +33,7 @@ class DictCollections(PySuit):
                 for value in sorted_dict:
                     key_result = [
                         key for key in dictionary if dictionary[key] == value
-                        ]
+                    ]
                     final_dict[key_result[0]] = value
             # Sorting dict by keys
             else:

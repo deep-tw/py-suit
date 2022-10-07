@@ -11,7 +11,6 @@ class TestNestedList():
     def fake(self):
         return Faker()
 
-
     @pytest.fixture
     def nested_list(self):
 
@@ -29,7 +28,12 @@ class TestNestedList():
     def test_failed_with_no_input_nested_list(self, fake, nested_list):
 
         with pytest.raises(TypeError):
-            nested_list.removNestings()
+            nested_list.nested_iterator()
+
+    def test_failed_with_invalid_nested_list(self, fake, nested_list):
+        sample_input = fake.random_int(1, 100)
+        with pytest.raises(Exception):
+            nested_list.nested_iterator(sample_input)
 
     def test_passes_with_valid_nested_list(self, fake, nested_list):
 
@@ -45,15 +49,16 @@ class TestNestedList():
                     fake.word(), fake.random_int()
                 ]
             ]
-            ]
-        result = nested_list.removNestings(sample_list)
-        
+        ]
+        result = nested_list.nested_iterator(sample_list)
+
         assert result != sample_list
 
     def test_passes_with_empty_nested_list_input_type(self, fake, nested_list):
 
         sample_list = []
-        result = nested_list.removNestings(sample_list)
+        result = nested_list.nested_iterator(sample_list)
+
         assert sample_list == result
 
     def test_passes_with_valid_nested_tuple(self, fake, nested_list):
@@ -69,22 +74,22 @@ class TestNestedList():
                     fake.random_int(),
                     fake.random_int(),
                     fake.random_int()
-                )
+            )
             )
         )
 
-        result = nested_list.removNestings(sample_tuple)
+        result = nested_list.nested_iterator(sample_tuple)
 
         assert result != sample_tuple
 
     def test_passes_with_valid_nested_set(self, fake, nested_list):
 
         sample_set = {
-                fake.random_int(),
-                fake.word(),
-                fake.random_int(), fake.word(),
-                frozenset([fake.random_int(), fake.random_int()])}
+            fake.random_int(),
+            fake.word(),
+            fake.random_int(), fake.word(),
+            frozenset([fake.random_int(), fake.random_int()])}
 
-        result = nested_list.removNestings(sample_set)
+        result = nested_list.nested_iterator(sample_set)
 
         assert result != sample_set
