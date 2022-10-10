@@ -126,7 +126,7 @@ Notice a bug let us know. Thanks
 
 
 ### Author
-+ Main Maintainer: Deepak Patidar / Nitesh Yadav
++ Main Maintainer: Avinash Tiwari
 + Team Thoughtwin
 
 ### License

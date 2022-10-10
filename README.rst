@@ -1,7 +1,7 @@
 PySuit
 ======
 
-|Read the Docs| |codecov|
+|Read the Docs| |codecov| |PyPI version|
 
 A unified collection of python functions eg dictsort,nested_iterator etc
 
@@ -10,6 +10,12 @@ Purpose of the Package
 
 -  The purpose of the package is to provide a collection of fuction and
    module indices in one unified libary
+
+Documentation
+-------------
+
+-  The official documentation is hosted on readthedocs.io:
+   https://py-suit.readthedocs.io/en/latest/
 
 Features
 --------
@@ -183,7 +189,7 @@ Contributions are welcome Notice a bug let us know. Thanks
 Author
 ------
 
--  Main Maintainer: Deepak Patidar / Nitesh Yadav
+-  Main Maintainer: Avinash Tiwari
 -  Team Thoughtwin
 
 License
@@ -195,3 +201,5 @@ License
    :target: py-suit.rtfd.io/en/latest/
 .. |codecov| image:: https://codecov.io/github/deep-tw/py-suit/branch/release/graph/badge.svg?token=WR57HD3UTR
    :target: https://codecov.io/github/deep-tw/py-suit
+.. |PyPI version| image:: https://badge.fury.io/py/pysuit.svg
+   :target: https://badge.fury.io/py/pysuit
