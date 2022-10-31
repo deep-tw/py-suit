@@ -21,6 +21,11 @@ classifiers=[
 
 [tool.poetry.dependencies]
 python = ">= 3.7.0"
+faker = "^15.1.1"
+packaging = "^21.3"
+pytest = "^7.2.0"
+flake8 = "^5.0.4"
+pytest-cov = "^4.0.0"
 
 
 [build-system]

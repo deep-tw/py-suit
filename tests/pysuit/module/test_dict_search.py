@@ -25,23 +25,15 @@ class TestDictCollection():
 
         assert isinstance(dict_collection, PySuit)
 
-    def test_passes_with_no_flag(self, fake, dict_collection):
-        input_dict = {
-            fake.word(): fake.random_int(), 
-            fake.word(): fake.word(),
-            fake.word(): fake.pyfloat(),
-            fake.word(): fake.pyfloat(),
-            fake.word(): fake.word(),
-        }
+    def test_passes_with_no_dict(self, dict_collection):
 
-        result = dict_collection.dictsort(input_dict)
+        with pytest.raises(TypeError):
+            dict_collection.dict_key_searching('key')
 
-        assert result == input_dict
+    def test_passes_with_no_key(self, dict_collection):
 
-    def test_passes_with_no_dict(self, fake, dict_collection):
-
-        with pytest.raises(AttributeError):
-            dict_collection.dictsort("values")
+        with pytest.raises(TypeError):
+            dict_collection.dict_key_searching('dictionary')
 
     def test_failed_with_invaild_dict(self, fake, dict_collection):
 
@@ -54,26 +46,14 @@ class TestDictCollection():
         ]
 
         with pytest.raises(AttributeError):
-            dict_collection.dictsort(input_dict, 'keys')
+            dict_collection.dict_key_searching(input_dict, 'key')
 
-    def test_passes_with_invalid_flag(self, fake, dict_collection):
-
-        input_dict = {
-            fake.word(): fake.random_int(),
-            fake.word(): fake.word(),
-            fake.word(): fake.pyfloat(),
-            fake.word(): fake.pyfloat(),
-            fake.word(): fake.word(),
-        }
-        with pytest.raises(AttributeError):
-            dict_collection.dictsort(input_dict, None)
-
-    def test_failed_with_no_input_dict(self, fake, dict_collection):
+    def test_failed_with_no_input_dict(self, dict_collection):
 
         with pytest.raises(TypeError):
-            dict_collection.dictsort()
+            dict_collection.dict_key_searching()
 
-    def test_passes_with_valid_dictionary_and_flag(self, fake, dict_collection):
+    def test_passes_with_valid_dictionary(self, fake, dict_collection):
 
         input_dict = {
             fake.word(): fake.random_int(),
@@ -83,8 +63,24 @@ class TestDictCollection():
             fake.word(): fake.word(),
         }
 
-        result = dict_collection.dictsort(input_dict, "values")
+        dict_collection.dict_key_searching(input_dict, "key")
 
-        assert result == input_dict
+    def test_passes_with_invalid_key(self, fake, dict_collection):
 
-    
+        input_dict = {
+            fake.word(): fake.random_int(),
+            fake.word(): fake.word(),
+            fake.word(): fake.pyfloat(),
+            fake.word(): fake.pyfloat(),
+            fake.word(): fake.word(),
+        }
+        with pytest.raises(TypeError):
+            dict_collection.dict_key_searching(input_dict, None)
+
+    def test_passes_with_outer_key(self, fake, dict_collection):
+
+        input_dict = {
+            "test": {'test': {fake.word(): fake.random_int()}, fake.word(): fake.pyfloat()},
+            fake.word(): {fake.word(): fake.word(), fake.word(): fake.word()}
+        }
+        dict_collection.dict_key_searching(input_dict, 'test')

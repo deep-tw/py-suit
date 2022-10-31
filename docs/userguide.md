@@ -9,6 +9,8 @@ dict_collection = DictCollections()
 
 dict_collection.dict_sort(dictionary , flag)
 
+dict_collection.dict_key_searching(dictionary, key)
+
 ```
 
 #### Examples of DictCollections
@@ -23,6 +25,12 @@ dict_collection.dict_sort({"b": 3, "a": 34, 67: "c", 1: 64} , keys)
 ```
 ```python
 Sorted Dictionary is => {1: 64, 'a': 34, 'b': 3, 67: 'c'}
+```
+```python
+dict_collection.dict_key_searching({'a': {1: {'r':'v'}, 'i': '22'}, 'D': {'a': 'J', 22: 2}} , a)
+```
+```python
+Resultant Dictionary is => ({1: {'r': 'v'}, 'i': '22'}, 'J')
 ```
 ### NestedCollections
 ```python

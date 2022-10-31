@@ -4,6 +4,7 @@ This documentation gives you  overview of the Pysuit functions and method
 
 + [DictCollections](#DictCollections)
     + [dictsort](#dictsort)
+    + [dict_key_searching](#dict_key_searching)
 
 ---
 
@@ -23,7 +24,9 @@ This documentation gives you  overview of the Pysuit functions and method
 ---
 ### User Guide to Kick start a collection
 
-The dict sort function is used to sort the dictionary based on the keys and values
+The dict sort function is used to sort the dictionary based on the keys and values.
+
+The dict key searching function is used to return a tuple containing the values of the specified key.
 ### Usage
 Using the short forms or abbreviated forms of indices
 
@@ -35,6 +38,8 @@ from pysuit import DictCollections
 dict_collection = DictCollections()
 
 dict_collection.dict_sort(dictionary , flag)
+
+dict_collection.dict_key_searching(dictionary, key)
 
 ```
 ***dict_sort***<a name="dictsort">
@@ -49,6 +54,19 @@ dict_collection.dict_sort({"b": 3, "a": 34, 67: "c", 1: 64} , keys)
 Output => {1: 64, 'a': 34, 'b': 3, 67: 'c'}
 
 ```
+***dict_key_searching***<a name="dictkeysearching">
+### Examples
+```python
+from pysuit import DictCollections
+
+dict_collection = DictCollections()
+
+dict_collection.dict_key_searching({'a': {1: {'r':'v'}, 'i': '22'}, 'D': {'a': 'J', 22: 2}} , a)
+
+Output => ({1: {'r': 'v'}, 'i': '22'}, 'J')
+
+```
+
 ***NestedCollections***<a name="NestedCollections"><br>
 ### NestedCollections
 The nested list, nested set, nested dict, nested tuple function is used to remove nested

@@ -2,7 +2,7 @@ class PySuit:
     """
     PySuit is the package interface which means that all objects inherits
     from this class. So, each object in this pacakge is an PySuit object in the
-    fisrt place.
+    first place.
     """
 
     __name__ = "pysuit.PySuit()"
